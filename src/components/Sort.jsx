@@ -40,18 +40,18 @@ function Sort({ items }) {
 					/>
 				</svg>
 				<b>Сортировка по:</b>
-				<span onClick={toggleVisiblePopup}>{items[activeItem]}</span>
+				<span onClick={toggleVisiblePopup}>{items[activeItem].name}</span>
 			</div>
 			{visiblePopup && (
 				<div className="sort__popup">
 					<ul>
 						{items &&
-							items.map((item, index) => (
+							items.map((obj, index) => (
 								<li
 									className={activeItem === index ? 'active' : ''}
-									key={item}
+									key={obj.type}
 									onClick={() => onSelectItem(index)}>
-									{item}
+									{obj.name}
 								</li>
 							))}
 					</ul>
